@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 var express = require("express");
 var bodyParser = require("body-parser");
@@ -21,6 +21,8 @@ function logRequest(req, res, next) {
     req.method,
     req.originalUrl,
   ];
+
+  next();
 }
 
 function test() { }
