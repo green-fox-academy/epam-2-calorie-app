@@ -23,4 +23,4 @@ function logRequest(req, res, next) {
   ];
 }
 
-function test() {
+function test() { }
