@@ -1,8 +1,8 @@
 var gulp = require('gulp');
-var gulp-util = require("gulp-utility");
+var gulpUtil = require("gulp-utility");
 
 gulp.task('default', function() {
-  return gulp-util.log("gulp is ready")
+  return gulpUtil.log("gulp is ready");
 });
 
 var jshint = require('gulp-jshint');
