@@ -25,3 +25,10 @@ gulp.task('watch', function () {
         gulp.start('build', done);
     }));
 });
+
+var jasmine = require('gulp-jasmine');
+
+gulp.task('test', function () {
+  return gulp.src('./test.js')
+    .pipe(jasmine());
+});
