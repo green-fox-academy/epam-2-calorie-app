@@ -18,5 +18,9 @@
   "homepage": "https://github.com/greenfox-academy/epam-2-calorie-app#readme",
   "devDependencies": {
     "gulp": "^3.9.0"
+  },
+  "dependencies": {
+    "body-parser": "^1.14.2",
+    "express": "^4.13.4"
   }
 }
