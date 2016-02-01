@@ -1,5 +1,5 @@
 var gulp = require('gulp');
-var gulpUtil = require("gulp-util");
+    gulpUtil = require("gulp-util");
 
 gulp.task('default', function() {
   return gulpUtil.log("gulp is ready");
@@ -14,19 +14,15 @@ gulp.task('lint', function() {
     .pipe(jshint.reporter('jshint-stylish'));
 });
 
-var gulp = require('gulp'),
+
 var watch = require('gulp-watch');
 
-gulp.task('stream', function () {
-    return gulp.src('css/**/*.css')
-        .pipe(watch('css/**/*.css'))
-        .pipe(gulp.dest('build'));
-});
+var batch = require('gulp-batch');
 
-gulp.task('callback', function (cb) {
-    watch('css/**/*.css', function () {
-        gulp.src('css/**/*.css')
-            .pipe(watch('css/**/*.css'))
-            .on('end', cb);
-    });
+gulp.task('build', function () { console.log('Working!'); });
+
+gulp.task('watch', function () {
+    watch('*.js', batch(function (events, done) {
+        gulp.start('build', done);
+    }));
 });
