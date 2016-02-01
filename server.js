@@ -22,3 +22,5 @@ function logRequest(req, res, next) {
     req.originalUrl,
   ];
 }
+
+function test() { }
