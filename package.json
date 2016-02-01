@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/greenfox-academy/epam-2-calorie-app/issues"
   },
-  "homepage": "https://github.com/greenfox-academy/epam-2-calorie-app#readme"
+  "homepage": "https://github.com/greenfox-academy/epam-2-calorie-app#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
 }
