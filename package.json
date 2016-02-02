@@ -4,7 +4,7 @@
   "description": "Calorie counter trial",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "gulp": "gulp"
   },
   "repository": {
     "type": "git",
@@ -28,6 +28,7 @@
     "gulp-batch": "^1.0.5",
     "gulp-jasmine": "^2.2.1",
     "gulp-util": "^3.0.7",
+    "gulp-watch": "^4.3.5",
     "jasmine": "^2.4.1",
     "jshint-stylish": "^2.1.0",
     "request": "^2.69.0"
