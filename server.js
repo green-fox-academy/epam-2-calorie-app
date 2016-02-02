@@ -14,7 +14,7 @@ app.listen(port, function () {
   console.log('Listening on ', port);
 });
 
-app.get('/', function (req, res) {
+app.get('/test', function (req, res) {
     res.write('Hello World');
   });
 

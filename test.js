@@ -12,12 +12,5 @@ describe('Calorie Counter App Server', function() {
         done();
       });
     });
-
-    it('returns Hello World', function(done) {
-      request.get(baseUrl, function(error, response, body) {
-        expect(body).toBe('Hello World');
-        done();
-      });
-    });
   });
 });
