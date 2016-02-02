@@ -2,24 +2,38 @@
 var pg = require('pg');
 var url = process.env.DATABASE_URL;
 
-function getAll(req, res) {
+function getAllUsers(req, res) {
+  var allUsers = 'SELECT user_id, user_name FROM users;';
+  dbConnection(allUsers, function (res) {
+    return res;
+  });
+}
+
+function getAllConsumption() {
+  var allConsumption = 'SELECT cons_id, cons_name, cons_calories date FROM consumption;';
+  dbConnection(allConsumption, function (res) {
+    return res;
+  });
+}
+
+function dbConnection(task, callback) {
   pg.connect(url, function(err, client, done) {
-    client.query('SELECT * FROM consumption;', function(err, result) {
+    client.query(task, function(err, result) {
       done();
       if (err)
        {
          console.error(err);
-         res.send('Error ' + err);
+         callback.send('Error ' + err);
        }
       else
        {
-         res.json(result.rows);
+         callback.json(result.rows);
        }
     });
   });
 }
 
-
 module.exports = {
-  getAll: getAll
+  getAllUsers: getAllUsers,
+  getAllCons: getAllConsumption
 };
