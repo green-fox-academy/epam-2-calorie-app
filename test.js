@@ -3,6 +3,7 @@
 var request = require('request');
 
 var baseUrl = 'http://epam-2-calorie-app.herokuapp.com/';
+var testUrl = 'http://epam-2-calorie-app.herokuapp.com/test';
 
 describe('Calorie Counter App Server', function() {
   describe('GET /', function() {

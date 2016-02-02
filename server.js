@@ -14,9 +14,12 @@ app.listen(port, function () {
   console.log('Listening on ', port);
 });
 
-app.get('/test', function (req, res) {
-    res.write('Hello World');
-  });
+app.get('/test', getTest);
+
+function getTest(req, res) {
+  res.write('Hello World');
+  res.end();
+}
 
 function logRequest(req, res, next) {
   var parts = [
