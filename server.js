@@ -44,3 +44,7 @@ function logRequest(req, res, next) {
 
   next();
 }
+
+module.exports = {
+  createQuery: createQuery
+};

@@ -2,6 +2,8 @@
 
 var request = require('request');
 
+var server = require('./server');
+
 var baseUrl = 'http://epam-2-calorie-app.herokuapp.com/';
 var testUrl = 'http://epam-2-calorie-app.herokuapp.com/test';
 
@@ -20,5 +22,11 @@ describe('Calorie Counter App Server', function() {
         done();
       });
     });
+  });
+});
+
+describe('getTest2 returns string', function() {
+  it('createQuery returns string', function() {
+    expect(server.createQuery('get', '/test2')).toBe('SELECT * FROM test2');
   });
 });
