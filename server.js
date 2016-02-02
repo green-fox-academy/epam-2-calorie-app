@@ -15,7 +15,7 @@ app.listen(port, function () {
 });
 
 app.get('/', function (req, res) {
-    res.body('Hello World');
+    res = 'Hello World';
   });
 
 function logRequest(req, res, next) {
