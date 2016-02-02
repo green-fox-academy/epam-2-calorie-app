@@ -7,9 +7,14 @@ function getAll(req, res) {
     client.query('SELECT * FROM consumption;', function(err, result) {
       done();
       if (err)
-       { console.error(err); res.send('Error ' + err); }
+       {
+         console.error(err);
+         res.send('Error ' + err);
+       }
       else
-       { res.render('pages/db', {results: result.rows} ); }
+       {
+         res.json(result.rows);
+       }
     });
   });
 }
