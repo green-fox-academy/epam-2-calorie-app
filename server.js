@@ -3,6 +3,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var functions = require('./functions.js');
+var db = require('./database.js');
 
 var app = express();
 
@@ -18,6 +19,7 @@ app.use(bodyParser.json());
 
 app.get('/test', functions.getTest);
 app.get('/test2', functions.getTest2);
+app.get('/db', db.getAll);
 
 function logRequest(req, res, next) {
   var parts = [
