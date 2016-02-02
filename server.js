@@ -14,6 +14,9 @@ app.listen(port, function () {
   console.log('Listening on ', port);
 });
 
+app.get('/', function (req, res) {
+    res.body('Hello World');
+  });
 
 function logRequest(req, res, next) {
   var parts = [
