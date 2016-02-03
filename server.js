@@ -3,8 +3,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var functions = require('./functions.js');
-var users = require('./users.js');
-var items = require('./items.js');
+var users = require('./users_endpoint.js');
+var items = require('./items_endpoint.js');
 
 var app = express();
 
