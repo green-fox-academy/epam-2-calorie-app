@@ -29,6 +29,6 @@ gulp.task('watch', function () {
 var jasmine = require('gulp-jasmine');
 
 gulp.task('test', function () {
-  return gulp.src('./test.js')
+  return gulp.src('./spec/test.js')
     .pipe(jasmine());
 });
