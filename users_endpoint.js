@@ -4,7 +4,7 @@ var users = require('./users.js')
 
 
 function getAllUsers(req, res) {
-  users.getAllUsers(function (err, result) {
+  users.getAll(function (err, result) {
     if (err)
      {
        console.error(err);

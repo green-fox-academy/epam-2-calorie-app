@@ -3,7 +3,7 @@
 var items = require('./items.js')
 
 function getAllConsumption(req, res) {
-  items.getAllConsumption(function (err, result) {
+  items.getAll(function (err, result) {
     if (err)
      {
        console.error(err);
