@@ -3,7 +3,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var functions = require('./functions.js');
-var db = require('./database.js');
+var users = require('./users.js');
+var items = require('./items.js');
 
 var app = express();
 
@@ -19,8 +20,8 @@ app.use(bodyParser.json());
 
 app.get('/test', functions.getTest);
 app.get('/test2', functions.getTest2);
-app.get('/db/users', db.getAllUsers);
-app.get('/db/consumption', db.getAllCons);
+app.get('/db/users', users.getAllUsers);
+app.get('/db/consumption', items.getAllCons);
 
 function logRequest(req, res, next) {
   var parts = [
