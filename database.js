@@ -1,6 +1,7 @@
 'use strict';
 var pg = require('pg');
-var url = process.env.DATABASE_URL;
+var url = process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5432/epam_calorie_app';
+console.log(url);
 
 function getAllUsers(req, res) {
   var allUsers = 'SELECT user_id, user_name FROM users;';
