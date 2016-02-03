@@ -2,6 +2,7 @@
 
 var functions = require('../functions');
 var users = require('../users');
+var items = require('../items');
 
 describe('getTest2 returns string', function() {
   it('createQuery returns string', function() {
@@ -12,9 +13,16 @@ describe('getTest2 returns string', function() {
 describe('test getAllUser', function() {
   it('is respons array', function(done) {
     users.getAll(function(err, result) {
-      console.log(result);
-      var type = typeof result.rows;
-      expect(type).toBe('object');
+      expect(Array.isArray(result.rows)).toBe(true);
+      done();
+    });
+  });
+});
+
+describe('test getAllConsumption', function() {
+  it('is respons array', function(done) {
+    items.getAll(function(err, result) {
+      expect(Array.isArray(result.rows)).toBe(true);
       done();
     });
   });
