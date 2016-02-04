@@ -7,6 +7,11 @@ function getAll(psql, cb) {
   psql.dbConnection(allConsumption, cb);
 }
 
+function deleteItem(psql, id, cb) {
+  var query = 'DELETE FROM consumption WHERE cons_id = ' + id + ';';
+  psql.dbConnection(query, cb);
+}
+
 // function add(params, cb) {
 //   var data = {};
 //   var wichUser = 'SELECT user_id FROM users WHERE name=?';
@@ -31,5 +36,6 @@ function getAll(psql, cb) {
 
 module.exports = {
   getAll: getAll,
+  deleteItem: deleteItem
   // add: add
 };
