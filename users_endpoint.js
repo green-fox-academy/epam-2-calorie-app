@@ -1,10 +1,11 @@
 'use strict';
 
 var users = require('./users.js')
+var psql = require('./database_connection.js');
 
 
 function getAllUsers(req, res) {
-  users.getAll(function (err, result) {
+  users.getAll(psql,function (err, result) {
     if (err)
      {
        console.error(err);

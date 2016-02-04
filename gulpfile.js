@@ -21,7 +21,7 @@ var batch = require('gulp-batch');
 gulp.task('build', function () { console.log('Working!'); });
 
 gulp.task('watch', function () {
-    watch('*.js', batch(function (events, done) {
+    watch('**/*.js', batch(function (events, done) {
         gulp.start('test', done);
     }));
 });
