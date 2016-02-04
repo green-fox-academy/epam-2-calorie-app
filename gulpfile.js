@@ -22,13 +22,13 @@ gulp.task('build', function () { console.log('Working!'); });
 
 gulp.task('watch', function () {
     watch('*.js', batch(function (events, done) {
-        gulp.start('build', done);
+        gulp.start('test', done);
     }));
 });
 
 var jasmine = require('gulp-jasmine');
 
 gulp.task('test', function () {
-  return gulp.src('./spec/test.js')
+  return gulp.src('./spec/*[sS]pec.js')
     .pipe(jasmine());
 });
