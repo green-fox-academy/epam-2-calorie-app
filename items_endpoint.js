@@ -33,5 +33,5 @@ function getAllConsumption(req, res) {
 
 module.exports = {
   getAllCons: getAllConsumption,
-  putCons: putConsumption
+  // putCons: putConsumption
 };
