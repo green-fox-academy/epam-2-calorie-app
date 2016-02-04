@@ -17,8 +17,6 @@ app.use(logRequest);
 app.use(express.static('public'));
 app.use(bodyParser.json());
 
-console.log('jóóóóó');
-
 app.get('/test', functions.getTest);
 app.get('/test2', functions.getTest2);
 app.get('/db/users', usersEndpoint.getAllUsers);
