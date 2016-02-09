@@ -38,7 +38,7 @@ describe('test psql all consumption task', function() {
   it('is respons array', function(done) {
     var psql = {};
     psql.dbConnection = function(task, cb) {
-      expect(task).toBe('SELECT cons_id, cons_name, cons_calories date FROM consumption;');
+      expect(task).toBe('SELECT cons_id, cons_name, cons_calories, date FROM consumption;');
       done();
     };
     items.getAll(psql,function(err, result) {});
