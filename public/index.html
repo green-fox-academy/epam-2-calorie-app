@@ -8,12 +8,14 @@
   <body ng-app="users">
     <div class="main-container">
       <h1>Calorie Counter</h1>
-      <div class="select-user-div">
+      <div class="select-user-div" ng-controller="UserList">
         <span>Select your username:</span>
-        <select class="select-user-input" ng-controller="UserList">
-          <option disabled selected>Username</option>
-          <option ng-repeat ="user in userData">{{ user.user_name }}</option>
+        <select class="select-user-input" ng-model = "selectedUser" ng-options="user.user_name for user in userData">
+          <!-- <option disabled selected>Username</option> -->
         </select>
+        <h1>Hello {{selectedUser.user_name}}</h1>
+        <p>Your id is: {{selectedUser.user_id}}</p>
+
       </div>
     </div>
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
