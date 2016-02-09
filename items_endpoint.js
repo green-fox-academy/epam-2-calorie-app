@@ -26,27 +26,27 @@ function deleteConsumption(req, res) {
      }
     else
      {
-       res.status(200).json(result);
+       res.status(200);
      }
   });
 }
 
-// function putConsumption(req, res) {
-//   items.add(req, function (err, result) {
-//     if (err)
-//      {
-//        console.error(err);
-//        res.send('Error ' + err);
-//      }
-//     else
-//      {
-//        res.json(result.rows);
-//      }
-//   });
-// }
+function putConsumption(req, res) {
+  items.add(req, function (err, result) {
+    if (err)
+     {
+       console.error(err);
+       res.send('Error ' + err);
+     }
+    else
+     {
+       res.status(201).json(result);
+     }
+  });
+}
 
 module.exports = {
   getAllCons: getAllConsumption,
-  deleteCons: deleteConsumption
-  // putCons: putConsumption
+  deleteCons: deleteConsumption,
+  putCons: putConsumption
 };

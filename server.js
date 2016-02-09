@@ -22,7 +22,7 @@ app.get('/test2', functions.getTest2);
 app.get('/db/users', usersEndpoint.getAllUsers);
 app.get('/db/consumption', itemsEndpoint.getAllCons);
 app.delete('/db/consumption/:id', itemsEndpoint.deleteCons);
-//app.post('/db/consumption', itemsEndpoint.putCons);
+app.post('/db/consumption', itemsEndpoint.putCons);
 
 function logRequest(req, res, next) {
   var parts = [

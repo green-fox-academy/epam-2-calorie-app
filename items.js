@@ -12,20 +12,20 @@ function deleteItem(psql, id, cb) {
   psql.dbConnection(query, cb);
 }
 
-// function add(params, cb) {
-//   if (params.body.date !== '') {
-//     var post = 'INSERT INTO consumption (cons_name, cons_calories, date, user_id) VALUES (' +
-//     + params.body.cons_name +','+ params.body.cons_calories +','+ params.body.date +','+ params.body.user_id + ');';
-//     psql.dbConnection(post, cb);
-//   } else {
-//     var post = 'INSERT INTO consumption (cons_name, cons_calories, user_id) VALUES (' +
-//     + params.body.cons_name +','+ params.body.cons_calories +','+ params.body.user_id + ');';
-//     psql.dbConnection(post, cb);
-//   }
-// }
+function add(params, cb) {
+  if (params.body.date !== '') {
+    var post = 'INSERT INTO consumption (cons_name, cons_calories, date, user_id) VALUES ('
+    +'"'+params.body.cons_name +'"'+','+ params.body.cons_calories +','+ params.body.date +','+ params.body.user_id + ');';
+    psql.dbConnection(post, cb);
+  } else {
+    var post = 'INSERT INTO consumption (cons_name, cons_calories, user_id) VALUES ('
+    +'\''+ params.body.cons_name +'\''+','+ params.body.cons_calories +','+ params.body.user_id + ');';
+    psql.dbConnection(post, cb);
+  }
+}
 
 module.exports = {
   getAll: getAll,
-  deleteItem: deleteItem
-  // add: add
+  deleteItem: deleteItem,
+  add: add
 };
