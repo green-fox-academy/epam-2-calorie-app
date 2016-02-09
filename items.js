@@ -7,6 +7,11 @@ function getAll(psql, cb) {
   psql.dbConnection(allConsumption, cb);
 }
 
+function deleteItem(psql, id, cb) {
+  var query = 'DELETE FROM consumption WHERE cons_id = ' + id + ';';
+  psql.dbConnection(query, cb);
+}
+
 // function add(params, cb) {
 //   if (params.body.date !== '') {
 //     var post = 'INSERT INTO consumption (cons_name, cons_calories, date, user_id) VALUES (' +
@@ -21,5 +26,6 @@ function getAll(psql, cb) {
 
 module.exports = {
   getAll: getAll,
-  add: add
+  deleteItem: deleteItem
+  // add: add
 };

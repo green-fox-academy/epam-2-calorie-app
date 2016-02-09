@@ -17,6 +17,20 @@ function getAllConsumption(req, res) {
   });
 }
 
+function deleteConsumption(req, res) {
+  items.deleteItem(psql, req.params.id, function (err, result) {
+    if (err)
+     {
+       console.error(err);
+       res.send('Error ' + err);
+     }
+    else
+     {
+       res.status(200);
+     }
+  });
+}
+
 // function putConsumption(req, res) {
 //   items.add(req, function (err, result) {
 //     if (err)
@@ -33,5 +47,6 @@ function getAllConsumption(req, res) {
 
 module.exports = {
   getAllCons: getAllConsumption,
-  putCons: putConsumption
+  deleteCons: deleteConsumption
+  // putCons: putConsumption
 };
