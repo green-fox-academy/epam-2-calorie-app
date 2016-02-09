@@ -16,11 +16,13 @@
           <td>{{consumption.cons_name}}</td>
           <td>{{consumption.cons_calories}}</td>
           <td>{{consumption.date}}</td>
+          <td ng-controller="myDelete"><button id={{consumption.cons_id}} ng-click="delItem(consumption.cons_id)">Delete</button></td>
         </tr>
       </table>
     </div>
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
     <script type="text/javascript" src="js/main_consumption.js"></script>
     <script type="text/javascript" src="js/consumption_controller.js"></script>
+    <script type="text/javascript" src="js/consumption_delete.js"></script>
   </body>
 </html>
