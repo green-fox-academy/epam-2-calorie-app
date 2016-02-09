@@ -4,60 +4,23 @@
     <meta charset="utf-8">
     <title>Calorie counter</title>
   </head>
-  <body>
-    <div class="meal-selection-pane">
-      <div class="row">
-        <h1>Calorie Counter</h1>
-      </div>
-      <div class="input-div">
-        <label for="meal-input">What did you just eat?</label>
-        <select id="meal-input"></select>
-      </div>
-      <div class="input-div">
-        <label for="quantity-input">How much? Be honest!</label>
-        <input id="quantity-input" type="number">
-      </div>
-      <div class="input-div">
-        <label for="calorie-input">Calories</label>
-        <input id="calorie-input" type="number">
-      </div>
-      <div class="input-div">
-        <label for="date-input">Date </label>
-        <input id="date-input" type="datetime-local">
-      </div>
-      <button class="submit-button" type="button">Submit</button>
-    </div>
-    <div class="add-meal-to-database-pane">
-      <div class="input-div">
-        <label for="new-meal-input">New Meal</label>
-        <input id="new-meal-input" type="text">
-      </div>
-      <div class="input-div">
-        <label for="new-meal-calorie-input">Calories</label>
-        <input id="new-meal-calorie-input" type="number">
-      </div>
-      <button class="add-button" type="button">Add</button>
-    </div>
-    <div class="meal-display-pane">
-      <div class="input-div">
-        <label for="filter-date-input">Show what I ate on:</label>
-        <input id="filter-date-input" type="date">
-      </div>
-      <button class="filter-button" type="button">Filter</button>
-      <div class="meal-history">
-        <table class="meal-table">
-          <thead>
-            <tr>
-              <th>Meal</th>
-              <th>Calories</th>
-              <th>Date</th>
-            </tr>
-          </thead>
-          <tbody class="meal-list">
-          </tbody>
-        </table>
-      </div>
+  <body ng-app="myApp">
+    <div class="meals" ng-controller="myController" >
+      <table>
+        <tr>
+          <td>Name</td>
+          <td>Calories</td>
+          <td>Date</td>
+        </tr>
+        <tr ng-repeat="consumption in consumptions">
+          <td>{{consumption.cons_name}}</td>
+          <td>{{consumption.cons_calories}}</td>
+          <td>{{consumption.date}}</td>
+        </tr>
+      </table>
     </div>
     <script type="text/javascript" src="js/lib/angular.min.js"></script>
+    <script type="text/javascript" src="js/main_consumption.js"></script>
+    <script type="text/javascript" src="js/consumption_controller.js"></script>
   </body>
 </html>
