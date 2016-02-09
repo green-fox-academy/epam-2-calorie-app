@@ -11,7 +11,8 @@
       <div class="select-user-div">
         <span>Select your username:</span>
         <select class="select-user-input" ng-controller="UserList">
-          <option disabled selected ng-repeat ="user in userData">{{ user.user_name }}</option>
+          <option disabled selected>Username</option>
+          <option ng-repeat ="user in userData">{{ user.user_name }}</option>
         </select>
       </div>
     </div>
