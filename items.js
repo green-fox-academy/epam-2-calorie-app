@@ -3,7 +3,7 @@
 var psql = require('./database_connection.js')
 
 function getAll(psql, cb) {
-  var allConsumption = 'SELECT cons_id, cons_name, cons_calories date FROM consumption;';
+  var allConsumption = 'SELECT cons_id, cons_name, cons_calories, date FROM consumption;';
   psql.dbConnection(allConsumption, cb);
 }
 
