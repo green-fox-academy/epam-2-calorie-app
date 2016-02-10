@@ -1,10 +1,8 @@
 'use strict';
 
-
-
-function getAll(psql, cb) {
+function getAll(connection, cb) {
   var allUsers = 'SELECT user_id, user_name FROM users;';
-  psql.dbConnection(allUsers, cb);
+  connection.dbConnection(allUsers, cb);
 }
 
 module.exports = {
