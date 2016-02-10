@@ -28,7 +28,7 @@ function deleteConsumption(connection) {
        }
       else
        {
-         res.status(200);
+         res.status(200).json(result);
        }
     });
   }
