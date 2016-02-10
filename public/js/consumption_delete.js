@@ -1,7 +1,5 @@
 'use strict';
 
-
-
 app.controller('myDelete', function($scope, $http) {
   $scope.delItem = function(item) {
     $http.delete(url + '/db/consumption/' + item).then(function(response) {

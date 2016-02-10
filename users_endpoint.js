@@ -3,8 +3,7 @@
 var users = require('./users.js')
 var psql = require('./database_connection.js');
 
-
-function getAllUsers(req, res) {
+function getAllUsers( req, res) {
   users.getAll(psql,function (err, result) {
     if (err)
      {

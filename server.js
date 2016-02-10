@@ -8,21 +8,26 @@ var itemsEndpoint = require('./items_endpoint.js');
 
 var app = express();
 
-var port = parseInt(process.env.PORT || '3000');
-app.listen(port, function () {
-  console.log('Listening on port', port);
-});
+function setup(connection) {
+  app.use(logRequest);
+  app.use(express.static('public'));
+  app.use(bodyParser.json());
 
-app.use(logRequest);
-app.use(express.static('public'));
-app.use(bodyParser.json());
 
-app.get('/test', functions.getTest);
-app.get('/test2', functions.getTest2);
-app.get('/db/users', usersEndpoint.getAllUsers);
-app.get('/db/consumption', itemsEndpoint.getAllCons);
-app.delete('/db/consumption/:id', itemsEndpoint.deleteCons);
-app.post('/db/consumption', itemsEndpoint.putCons);
+  app.get('/test', functions.getTest);
+  app.get('/test2', functions.getTest2);
+  app.get('/db/users', usersEndpoint.getAllUsers);
+  app.get('/db/consumption', itemsEndpoint.getAllCons);
+  app.delete('/db/consumption/:id', itemsEndpoint.deleteCons);
+  app.post('/db/consumption', itemsEndpoint.putCons);
+}
+
+function start() {
+  var port = parseInt(process.env.PORT || '3000');
+  app.listen(port, function () {
+    console.log('Listening on port', port);
+  });
+}
 
 function logRequest(req, res, next) {
   var parts = [
@@ -31,4 +36,8 @@ function logRequest(req, res, next) {
     req.originalUrl,
   ];
   next();
+}
+module.exports = {
+  setup: setup,
+  start: start
 }
