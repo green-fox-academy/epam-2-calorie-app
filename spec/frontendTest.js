@@ -1,24 +1,24 @@
 'use strict';
 
-describe('userlisting check', function () {
-
-  beforeEach(module('users'));
-
-  var $controller;
-
-  beforeEach(inject(function(_$controller_){
-    $controller = _$controller_;
-  }));
-
-  describe('userlisting', function () {
-        it('should give an array', function () {
-            var $scope = {};
-            var controller = $controller('UserList', { $scope: $scope });
-            expect($scope.userData.length).not.toBeNull();
-        });
-    });
-
-});
+// describe('userlisting check', function () {
+//
+//   beforeEach(module('users'));
+//
+//   var $controller;
+//
+//   beforeEach(inject(function(_$controller_){
+//     $controller = _$controller_;
+//   }));
+//
+//   describe('userlisting', function () {
+//         it('should give an array', function () {
+//             var $scope = {};
+//             var controller = $controller('UserList', { $scope: $scope });
+//             expect($scope.userData.length).not.toBeNull();
+//         });
+//     });
+//
+// });
 
 describe('calculator', function () {
 
