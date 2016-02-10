@@ -1,8 +1,11 @@
 'use strict';
 
 var connection = require('./database_connection');
-var Server = require('./server.js')
+var server = require('./server.js')
 
-var app = new Server(connection);
+var app = server(connection);
 
-app.start();
+var port = parseInt(process.env.PORT || '3000');
+app.listen(port, function () {
+  console.log('Listening on port', port);
+});
