@@ -23,7 +23,7 @@
     "gulp-watch": "^4.3.5",
     "jasmine-core": "^2.4.1",
     "jshint": "^2.9.1",
-    "karma": "^0.13.19",
+    "karma": "^0.13.0",
     "karma-chrome-launcher": "^0.2.2",
     "karma-jasmine": "^0.3.7",
     "supertest": "^1.1.0"
