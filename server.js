@@ -13,7 +13,7 @@ function Setup(connection) {
   app.use(bodyParser.json());
 
   app.get('/db/users', usersEndpoint.getAllUsers(connection));
-  app.get('/db/consumption', itemsEndpoint.getAllCons);
+  app.get('/db/consumption', itemsEndpoint.getAllCons(connection));
   app.delete('/db/consumption/:id', itemsEndpoint.deleteCons);
   app.post('/db/consumption', itemsEndpoint.putCons);
 
