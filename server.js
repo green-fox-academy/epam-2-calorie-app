@@ -5,24 +5,17 @@ var bodyParser = require('body-parser');
 var usersEndpoint = require('./users_endpoint.js');
 var itemsEndpoint = require('./items_endpoint.js');
 
-var app = express();
 
 function Setup(connection) {
+  var app = express();
   app.use(logRequest);
   app.use(express.static('public'));
   app.use(bodyParser.json());
 
   app.get('/db/users', usersEndpoint.getAllUsers(connection));
   app.get('/db/consumption', itemsEndpoint.getAllCons(connection));
-  app.delete('/db/consumption/:id', itemsEndpoint.deleteCons);
-  app.post('/db/consumption', itemsEndpoint.putCons);
-
-  this.start = function() {
-    var port = parseInt(process.env.PORT || '3000');
-    app.listen(port, function () {
-      console.log('Listening on port', port);
-    });
-  }
+  app.delete('/db/consumption/:id', itemsEndpoint.deleteCons(connection));
+  app.post('/db/consumption', itemsEndpoint.putCons(connection));
 
   function logRequest(req, res, next) {
     var parts = [
@@ -32,6 +25,7 @@ function Setup(connection) {
     ];
     next();
   }
+  return app;
 }
 
 module.exports = Setup;

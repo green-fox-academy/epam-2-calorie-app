@@ -8,7 +8,7 @@ function getAllUsers(connection) {
       if (err)
        {
          console.error(err);
-         res.send('Error ' + err);
+         res.status(500).json({error: err});
        }
       else
        {

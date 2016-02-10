@@ -21,7 +21,8 @@
     "gulp-jshint": "^2.0.0",
     "gulp-watch": "^4.3.5",
     "jshint": "^2.9.1",
-    "karma": "^0.13.19"
+    "karma": "^0.13.19",
+    "supertest": "^1.1.0"
   },
   "dependencies": {
     "body-parser": "^1.14.2",

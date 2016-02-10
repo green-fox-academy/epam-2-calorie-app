@@ -8,23 +8,23 @@ function getAllConsumption(connection) {
       if (err)
        {
          console.error(err);
-         res.send('Error ' + err);
+         res.status(500).json({error: err});
        }
       else
        {
-         res.json(result.rows);
+         res.status(200).json(result.rows);
        }
     });
   }
 }
 
 function deleteConsumption(connection) {
-  return function() {
+  return function(req, res) {
     items.deleteItem(connection, req.params.id, function (err, result) {
       if (err)
        {
          console.error(err);
-         res.send('Error ' + err);
+         res.status(500).json({error: err});
        }
       else
        {
@@ -35,12 +35,12 @@ function deleteConsumption(connection) {
 }
 
 function putConsumption(connection) {
-  return function() {
-    items.add(connection, function (err, result) {
+  return function(req, res) {
+    items.add(connection, req, function (err, result) {
       if (err)
        {
          console.error(err);
-         res.send('Error ' + err);
+         res.status(500).json({error: err});
        }
       else
        {
