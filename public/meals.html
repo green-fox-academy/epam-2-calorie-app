@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <title>Calorie counter</title>
   </head>
-  <body ng-app="myApp">
-    <div class="meals" ng-controller="myController" >
+  <body ng-app="consumption">
+    <div class="meals" ng-controller="consumptionListController" >
       <table>
         <tr>
           <td>Name</td>
@@ -16,7 +16,7 @@
           <td>{{consumption.cons_name}}</td>
           <td>{{consumption.cons_calories}}</td>
           <td>{{consumption.date}}</td>
-          <td ng-controller="myDelete"><button id={{consumption.cons_id}} ng-click="delItem(consumption.cons_id)">Delete</button></td>
+          <td ng-controller="consumptionDelete"><button id={{consumption.cons_id}} ng-click="delItem(consumption.cons_id)">Delete</button></td>
         </tr>
       </table>
     </div>
