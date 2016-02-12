@@ -11,7 +11,7 @@ var conn = {
   dbConnection: function(data, cb) {cb(null, {rows: []});}
 };
 
-describe('Correct users returned', function () {
+describe('Return users error', function () {
   it('supertest', function(done) {
     var app = server(connErr);
     request(app)
@@ -25,7 +25,7 @@ describe('Correct users returned', function () {
   });
 });
 
-describe('Correct users returned', function () {
+describe('Correct consumption returned', function () {
   it('supertest', function(done) {
     var app = server(conn);
     request(app)
@@ -39,7 +39,7 @@ describe('Correct users returned', function () {
   });
 });
 
-describe('Correct users returned', function () {
+describe('New consumption', function () {
   it('supertest', function(done) {
     var app = server(conn);
     request(app)
@@ -65,7 +65,7 @@ var connDelete = {
   dbConnection: function(data, cb) {cb(null, 'deleted');}
 };
 
-describe('Correct users returned', function () {
+describe('Correct consumption deleted', function () {
   it('supertest', function(done) {
     var app = server(connDelete);
     request(app)
