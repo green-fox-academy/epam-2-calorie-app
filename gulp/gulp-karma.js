@@ -5,7 +5,7 @@ var gulp = require('gulp');
 
 gulp.task('karma', function (done) {
   new Server({
-    configFile: __dirname + '/karma.conf.js',
+    configFile: __dirname + '/../karma.conf.js',
     singleRun: true
   }, done).start();
 });
