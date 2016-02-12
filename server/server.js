@@ -3,7 +3,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var usersEndpoint = require('./users_endpoint.js');
-var itemsEndpoint = require('./items_endpoint.js');
+var consumptionsEndpoint = require('./consumptions_endpoint.js');
 
 
 function setup(connection) {
@@ -13,9 +13,9 @@ function setup(connection) {
   app.use(bodyParser.json());
 
   app.get('/db/users', usersEndpoint.getAllUsers(connection));
-  app.get('/db/consumption', itemsEndpoint.getAllCons(connection));
-  app.delete('/db/consumption/:id', itemsEndpoint.deleteCons(connection));
-  app.post('/db/consumption', itemsEndpoint.putCons(connection));
+  app.get('/db/consumption', consumptionsEndpoint.getAllCons(connection));
+  app.delete('/db/consumption/:id', consumptionsEndpoint.deleteCons(connection));
+  app.post('/db/consumption', consumptionsEndpoint.putCons(connection));
 
   function logRequest(req, res, next) {
     var parts = [

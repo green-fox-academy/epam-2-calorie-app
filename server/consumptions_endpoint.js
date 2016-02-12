@@ -1,6 +1,6 @@
 'use strict';
 
-var items = require('./items.js')
+var items = require('./consumptions.js')
 
 function getAllConsumption(connection) {
   return function(req, res) {
