@@ -1,6 +1,6 @@
 'use strict';
 
-require('gulp/gulp-karma.js');
+require('./gulp/gulp-karma.js');
 
 var gulp = require('gulp');
 var gulpUtil = require('gulp-util');
