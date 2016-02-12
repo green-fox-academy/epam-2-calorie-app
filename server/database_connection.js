@@ -1,6 +1,6 @@
 'use strict';
 var pg = require('pg');
-var url = process.env.DATABASE_URL || 'postgres://postgres:postgres@localhost:5432/epam_calorie_app';
+var url = require('./config.js').DATABASE_URL;
 
 function dbConnection(task, callback) {
   pg.connect(url, function(err, client, done) {
