@@ -20,7 +20,7 @@ describe('test getAllConsumption', function() {
     psql.dbConnection = function(task,cb) {
       cb(null, [{}]);
     };
-    items.getAll(psql,function(err, result) {
+    consumptions.getAll(psql,function(err, result) {
       expect(result.length).toBeGreaterThan(0);
       done();
     });
@@ -34,6 +34,6 @@ describe('test psql all consumption task', function() {
       expect(task).toBe('SELECT cons_id, cons_name, cons_calories, date FROM consumption;');
       done();
     };
-    items.getAll(psql,function(err, result) {});
+    consumptions.getAll(psql,function(err, result) {});
   });
 });
