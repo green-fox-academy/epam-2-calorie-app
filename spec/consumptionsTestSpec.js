@@ -1,18 +1,6 @@
 'use strict';
 
-var users = require('../server/users');
 var consumptions = require('../server/consumptions');
-
-describe('test getAllUser', function() {
-  it('is respons array', function(done) {
-    var psql = {};
-    psql.dbConnection = function(task,cb) {cb(null, [{}]);};
-    users.getAll(psql, function(err, result) {
-      expect(result.length).toBeGreaterThan(0);
-      done();
-    });
-  });
-});
 
 describe('test getAllConsumption', function() {
   it('is respons array', function(done) {
