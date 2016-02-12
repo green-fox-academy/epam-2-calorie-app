@@ -1,7 +1,7 @@
 'use strict';
 
-var users = require('../users');
-var items = require('../items');
+var users = require('../server/users');
+var consumptions = require('../server/consumptions');
 
 describe('test getAllUser', function() {
   it('is respons array', function(done) {
