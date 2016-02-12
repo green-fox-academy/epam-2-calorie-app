@@ -1,5 +1,8 @@
-CREATE DATABASE epam_calorie_app;
 
+
+
+CREATE DATABASE epam_calorie_app;
+\connect epam_calorie_app;
 CREATE TABLE users (user_id SERIAL, user_name TEXT NOT NULL, PRIMARY KEY (user_id));
 
 
