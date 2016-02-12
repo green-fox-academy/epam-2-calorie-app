@@ -1,7 +1,7 @@
 'use strict';
 
 var request = require('supertest');
-var server = require('../server.js');
+var server = require('../server/server.js');
 
 var connErr = {
   dbConnection: function(data, cb) {cb('test error', {rows: []});}
