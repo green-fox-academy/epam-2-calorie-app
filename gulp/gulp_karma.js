@@ -1,7 +1,7 @@
 'use strict';
 
-var Server = require('karma').Server;
 var gulp = require('gulp');
+var Server = require('karma').Server;
 
 gulp.task('karma', function (done) {
   new Server({
