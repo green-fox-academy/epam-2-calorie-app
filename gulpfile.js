@@ -1,5 +1,7 @@
 'use strict';
 
+require('gulp/gulp-karma.js');
+
 var gulp = require('gulp');
 var gulpUtil = require('gulp-util');
 
@@ -31,13 +33,4 @@ var jasmine = require('gulp-jasmine');
 gulp.task('test', function () {
   return gulp.src('./spec/*[sS]pec.js')
     .pipe(jasmine());
-});
-
-var Server = require('karma').Server;
-
-gulp.task('karma', function (done) {
-  new Server({
-    configFile: __dirname + '/karma.conf.js',
-    singleRun: true
-  }, done).start();
 });
