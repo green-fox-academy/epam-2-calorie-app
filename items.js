@@ -11,7 +11,6 @@ function deleteItem(connection, id, cb) {
 }
 
 function add(connection, params, cb) {
-  console.log(params.body.date);
   if (params.body.date !== '') {
     var post = 'INSERT INTO consumption (cons_name, cons_calories, date, user_id) VALUES ('
     +'"'+params.body.cons_name +'"'+','+ params.body.cons_calories +','+ params.body.date +','+ params.body.user_id + ');';

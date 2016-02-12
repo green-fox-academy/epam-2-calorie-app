@@ -6,14 +6,14 @@ function getAllConsumption(connection) {
   return function(req, res) {
     items.getAll(connection, function (err, result) {
       if (err)
-       {
+      {
          console.error(err);
          res.status(500).json({error: err});
-       }
+      }
       else
-       {
+      {
          res.status(200).json(result.rows);
-       }
+      }
     });
   }
 }
@@ -22,14 +22,14 @@ function deleteConsumption(connection) {
   return function(req, res) {
     items.deleteItem(connection, req.params.id, function (err, result) {
       if (err)
-       {
+      {
          console.error(err);
          res.status(500).json({error: err});
-       }
+      }
       else
-       {
+      {
          res.status(200).json(result);
-       }
+      }
     });
   }
 }

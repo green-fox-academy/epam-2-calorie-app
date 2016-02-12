@@ -6,7 +6,7 @@ var usersEndpoint = require('./users_endpoint.js');
 var itemsEndpoint = require('./items_endpoint.js');
 
 
-function Setup(connection) {
+function setup(connection) {
   var app = express();
   app.use(logRequest);
   app.use(express.static('public'));
@@ -23,9 +23,10 @@ function Setup(connection) {
       req.method,
       req.originalUrl,
     ];
+    console.log(parts);
     next();
   }
   return app;
 }
 
-module.exports = Setup;
+module.exports = setup;

@@ -53,7 +53,6 @@ describe('consumption delete check', function () {
             $httpBackend.expectGET('/db/consumption');
             var controller = $controller('consumptionListController', { $scope: $scope });
             $httpBackend.flush();
-            console.log($scope.consumptions);
             expect($scope.consumptions.length).toBe(1);
 
             $httpBackend.expectDELETE('/db/consumption/1').respond({});
@@ -63,5 +62,4 @@ describe('consumption delete check', function () {
             expect($scope.consumptions.length).toBe(0);
         });
     });
-
 });
