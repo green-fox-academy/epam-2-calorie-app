@@ -1,4 +1,5 @@
 'use strict';
+
 var pg = require('pg');
 var url = require('./config.js').DATABASE_URL;
 
